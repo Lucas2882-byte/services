@@ -1,13 +1,13 @@
 import streamlit as st
 
-st.set_page_config(page_title="Lucasweb - Visibilité Locale", layout="wide")
+st.set_page_config(page_title="Lucasweb - Visibilité Locale", layout="wide", initial_sidebar_state="expanded")
 
-# HEADER
+# Forcer fond blanc même en thème sombre
 st.markdown("""
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-        html, body, [class*="css"] {
+        html, body, [class*="css"], .stApp {
             background-color: #ffffff !important;
             font-family: 'Poppins', sans-serif;
             color: #111827 !important;
