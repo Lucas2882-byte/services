@@ -10,7 +10,7 @@ st.markdown("""
         html, body, [class*="css"] {
             background-color: #ffffff !important;
             font-family: 'Poppins', sans-serif;
-            color: #111827;
+            color: #111827 !important;
         }
         .title {
             font-size: 48px;
@@ -25,13 +25,14 @@ st.markdown("""
             margin-bottom: 40px;
         }
         .full-text {
-            background-color: #f9fafb;
+            background-color: #ffffff;
             border: 1px solid #e5e7eb;
             border-radius: 12px;
             padding: 30px;
             font-size: 16px;
             line-height: 1.9;
             margin-bottom: 60px;
+            color: #111827;
         }
         .full-text strong {
             display: inline-block;
