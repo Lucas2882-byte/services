@@ -22,13 +22,14 @@ st.markdown("""
         .service-card {
             background: linear-gradient(135deg, #1e293b, #0f172a);
             border-radius: 16px;
-            padding: 30px;
+            padding: 25px;
             margin-bottom: 25px;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
             border: 1px solid #334155;
+            height: 100%;
         }
         .section-title {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 700;
             color: #facc15;
             margin-bottom: 12px;
@@ -54,84 +55,70 @@ st.markdown("""
 st.markdown('<div class="title">🚀 Boostez votre visibilité locale avec Lucasweb</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Des solutions simples et efficaces pour être visible sur Google, générer plus d’appels, plus de clients.</div>', unsafe_allow_html=True)
 
-# SERVICES
+# DASHBOARD-LIKE SERVICE DISPLAY
 
-def service_card(title, price, features, benefits):
-    st.markdown('<div class="service-card">', unsafe_allow_html=True)
-    st.markdown(f'<div class="section-title">{title} <span class="price">{price}</span></div>', unsafe_allow_html=True)
-    st.markdown('<ul class="feature-list">', unsafe_allow_html=True)
-    for f in features:
-        st.markdown(f'<li>{f}</li>', unsafe_allow_html=True)
-    st.markdown('</ul>', unsafe_allow_html=True)
-    for b in benefits:
-        st.markdown(f'<div class="benefit">👉 {b}</div>', unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
+def service_card(title, price, features, benefits, container):
+    with container:
+        st.markdown('<div class="service-card">', unsafe_allow_html=True)
+        st.markdown(f'<div class="section-title">{title} <span class="price">{price}</span></div>', unsafe_allow_html=True)
+        st.markdown('<ul class="feature-list">', unsafe_allow_html=True)
+        for f in features:
+            st.markdown(f'<li>{f}</li>', unsafe_allow_html=True)
+        st.markdown('</ul>', unsafe_allow_html=True)
+        for b in benefits:
+            st.markdown(f'<div class="benefit">👉 {b}</div>', unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
 
+# GRID OF CARDS
+row1 = st.columns(2)
 service_card(
     "🌐 Création de site internet vitrine",
     "450€",
-    [
-        "Site responsive (mobile, tablette)",
-        "Design moderne, formulaire de contact, SEO local",
-        "Hébergement + nom de domaine 1 an inclus (puis 100€/an)"
-    ],
-    ["Présentez votre activité 24/7 et renforcez votre image pro.", "Convertissez les visiteurs en clients."]
+    ["Site responsive (mobile, tablette)", "Design moderne, formulaire de contact, SEO local", "Hébergement + nom de domaine 1 an inclus (puis 100€/an)"],
+    ["Présentez votre activité 24/7 et renforcez votre image pro.", "Convertissez les visiteurs en clients."],
+    row1[0]
 )
-
 service_card(
     "📍 Optimisation fiche Google My Business",
     "50€/mois",
-    [
-        "Création ou optimisation complète (infos, photos, posts, etc.)",
-        "Suivi mensuel, réponses aux avis, analyse de performance"
-    ],
-    ["Améliorez votre classement sur Google Maps.", "Recevez plus d'appels entrants depuis votre zone locale."]
+    ["Création ou optimisation complète (infos, photos, posts, etc.)", "Suivi mensuel, réponses aux avis, analyse de performance"],
+    ["Améliorez votre classement sur Google Maps.", "Recevez plus d'appels entrants depuis votre zone locale."],
+    row1[1]
 )
 
+row2 = st.columns(2)
 service_card(
     "📦 Pack 1 fiche + site (sans justificatif)",
     "600€",
-    [
-        "1 fiche Google dans la ville de votre choix (sans adresse physique)",
-        "1 site vitrine avec nom de domaine + hébergement inclus"
-    ],
-    ["Créez une présence locale sans local physique.", "Idéal pour les pros nomades ou multisecteurs."]
+    ["1 fiche Google dans la ville de votre choix (sans adresse physique)", "1 site vitrine avec nom de domaine + hébergement inclus"],
+    ["Créez une présence locale sans local physique.", "Idéal pour les pros nomades ou multisecteurs."],
+    row2[0]
 )
-
 service_card(
     "🚀 Pack 5 fiches locales",
     "1 050€",
-    [
-        "5 fiches Google (210€/fiche)",
-        "1 site principal (400€) + 4 mini-sites (100€ chacun)",
-        "Numéros de redirection : 25€/mois",
-        "Hébergement + 5 noms de domaine : 160€/an"
-    ],
-    ["Multipliez les points de présence sur Google Maps.", "Couvrez plusieurs villes sans ouvrir de locaux physiques."]
+    ["5 fiches Google (210€/fiche)", "1 site principal (400€) + 4 mini-sites (100€ chacun)", "Numéros de redirection : 25€/mois", "Hébergement + 5 noms de domaine : 160€/an"],
+    ["Multipliez les points de présence sur Google Maps.", "Couvrez plusieurs villes sans ouvrir de locaux physiques."],
+    row2[1]
 )
 
+row3 = st.columns(2)
 service_card(
     "🏢 Création de fiche justifiée",
     "75€",
-    [
-        "Fiche Google avec justificatif d'adresse réel inclus"
-    ],
-    ["Obtenez une fiche 100% conforme pour votre entreprise locale."]
+    ["Fiche Google avec justificatif d'adresse réel inclus"],
+    ["Obtenez une fiche 100% conforme pour votre entreprise locale."],
+    row3[0]
 )
-
 service_card(
     "⭐ Achat d’avis Google vérifiés",
     "À partir de 130€",
-    [
-        "10 avis : 13€/avis → 130€",
-        "25 avis : 12€/avis → 300€",
-        "50 avis : 11€/avis → 550€",
-        "100 avis : 9€/avis → 900€"
-    ],
-    ["Améliorez votre e-réputation localement.", "Renforcez votre visibilité grâce à la preuve sociale."]
+    ["10 avis : 13€/avis → 130€", "25 avis : 12€/avis → 300€", "50 avis : 11€/avis → 550€", "100 avis : 9€/avis → 900€"],
+    ["Améliorez votre e-réputation localement.", "Renforcez votre visibilité grâce à la preuve sociale."],
+    row3[1]
 )
 
-# CONTACT
+# CONTACT FULL WIDTH
 st.markdown('<div class="service-card">', unsafe_allow_html=True)
 st.markdown('<div class="section-title">📞 Contact & accompagnement</div>', unsafe_allow_html=True)
 st.markdown("""
