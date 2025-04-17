@@ -27,6 +27,9 @@ st.markdown("""
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
             border: 1px solid #334155;
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .section-title {
             font-size: 24px;
@@ -47,7 +50,8 @@ st.markdown("""
         .feature-list {
             color: #f1f5f9;
             font-size: 16px;
-            margin-left: 15px;
+            margin-left: 0;
+            padding-left: 1.2rem;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -59,15 +63,18 @@ st.markdown('<div class="subtitle">Des solutions simples et efficaces pour être
 
 def service_card(title, price, features, benefits, container):
     with container:
-        st.markdown('<div class="service-card">', unsafe_allow_html=True)
-        st.markdown(f'<div class="section-title">{title} <span class="price">{price}</span></div>', unsafe_allow_html=True)
-        st.markdown('<ul class="feature-list">', unsafe_allow_html=True)
-        for f in features:
-            st.markdown(f'<li>{f}</li>', unsafe_allow_html=True)
-        st.markdown('</ul>', unsafe_allow_html=True)
-        for b in benefits:
-            st.markdown(f'<div class="benefit">👉 {b}</div>', unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
+        content = f"""
+        <div class='service-card'>
+            <div class='section-title'>{title} <span class='price'>{price}</span></div>
+            <ul class='feature-list'>
+                {''.join([f'<li>{f}</li>' for f in features])}
+            </ul>
+            <div style='margin-top: 10px;'>
+                {''.join([f"<div class='benefit'>👉 {b}</div>" for b in benefits])}
+            </div>
+        </div>
+        """
+        st.markdown(content, unsafe_allow_html=True)
 
 # GRID OF CARDS
 row1 = st.columns(2)
