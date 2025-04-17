@@ -22,96 +22,20 @@ st.markdown("""
             color: #374151;
             margin-bottom: 40px;
         }
-        .card-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .top-box-grid {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
+        .full-text {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            font-size: 16px;
+            line-height: 1.6;
             margin-bottom: 40px;
         }
-        .top-box {
-            flex: 1;
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 25px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            text-align: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .top-box:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
-        }
-        .top-box h3 {
-            font-size: 20px;
-            color: #111827;
-            margin-bottom: 10px;
-            text-decoration: none;
-        }
-        .top-box p {
-            font-size: 16px;
-            color: #4b5563;
-            margin: 0;
-        }
-        .top-box a {
-            color: inherit;
-            text-decoration: none;
-            display: block;
-        }
-        .service-card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 25px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
-            border: 1px solid #d1d5db;
-            width: calc(50% - 10px);
-            position: relative;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            overflow: hidden;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        .section-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 12px;
-            position: relative;
-            z-index: 1;
-        }
-        .price-box {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: #f97316;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 8px;
+        .pdf-link {
+            margin-top: 40px;
+            font-size: 18px;
             font-weight: bold;
-            font-size: 14px;
-            z-index: 1;
-        }
-        .benefit {
-            color: #4b5563;
-            margin-top: 8px;
-            font-size: 15px;
-            position: relative;
-            z-index: 1;
-        }
-        .feature-list {
-            color: #1f2937;
-            font-size: 16px;
-            margin-left: 0;
-            padding-left: 1.2rem;
-            position: relative;
-            z-index: 1;
+            color: #1d4ed8;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -119,37 +43,53 @@ st.markdown("""
 st.markdown('<div class="title">🚀 Boostez votre visibilité locale avec Lucasweb</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Des solutions simples et efficaces pour être visible sur Google, générer plus d’appels, plus de clients.</div>', unsafe_allow_html=True)
 
+# LIEN PDF
+st.markdown('<div class="pdf-link">📄 Télécharger la présentation des services individuels : <a href="/mnt/data/Lucasweb_Services_Individuels.pdf" target="_blank">Lucasweb_Services_Individuels.pdf</a></div>', unsafe_allow_html=True)
+
+# TEXTE COMPLET
+st.markdown('''
+<div class="full-text">
+🌐 <strong>Vente de site internet vitrine – 450€</strong><br>
+- 1 page complète, responsive, optimisée SEO local<br>
+- Design professionnel personnalisé (images, couleurs, call-to-action)<br>
+- Formulaire de contact / prise de rendez-vous<br>
+- Hébergement + nom de domaine inclus pendant 1 an<br>
+💻 C’est votre vitrine en ligne, accessible 24/7.<br>
+📈 Idéal pour rassurer, convaincre, et générer des contacts.<br>
+🔐 Hébergement rapide, sécurisé, sans pub ni distraction.<br><br>
+
+📍 <strong>Gestion complète d’une fiche Google My Business – 50€/mois</strong><br>
+- Optimisation fiche existante ou création complète<br>
+- Photos, description, catégories, services, prise de rendez-vous<br>
+- Réponses aux avis, publications hebdo, suivi des performances<br>
+- Rapport mensuel clair : vues, clics, appels, directions<br>
+🚀 Une fiche active = plus de visibilité.<br>
+📞 Vous remontez dans les résultats et recevez plus d'appels.<br><br>
+
+🏢 <strong>Création de fiche avec justificatif d'adresse – 75€</strong><br>
+- Fiche créée dans une ville de votre choix avec adresse réelle vérifiée<br>
+- Optimisation de base incluse (photos, description, horaires)<br>
+- Convient aux activités locales ou aux franchises<br>
+🔐 Fiche 100% conforme et pérenne dans le temps.<br>
+🏙️ Apparaît dans les résultats Google Maps de la zone choisie.<br><br>
+
+📦 <strong>Création de fiche sans justificatif – 250€</strong><br>
+- Fiche créée sans local physique<br>
+- Possibilité de choisir une ville stratégique<br>
+- Avec mini-site vitrine inclus (optimisation SEO local)<br>
+📍 Idéal pour se positionner dans une nouvelle ville sans y être.<br>
+💼 Solution rapide et efficace pour les indépendants ou services à distance.<br><br>
+
+⭐ <strong>Achat d’avis Google vérifiés</strong><br>
+- 10 avis : 13€/avis → 130€<br>
+- 25 avis : 12€/avis → 300€<br>
+- 50 avis : 11€/avis → 550€<br>
+- 100 avis : 9€/avis → 900€<br>
+💬 Avis personnalisés, rédigés à la main, livrés progressivement<br>
+🔍 Renforce votre crédibilité aux yeux des clients & de Google<br>
+📈 Améliore le taux de clic et le positionnement de votre fiche
+</div>
+''', unsafe_allow_html=True)
+
 # TOP INFO BOXES
 st.markdown('<div class="top-box-grid">', unsafe_allow_html=True)
-
-st.markdown('''
-    <a href="#site">
-    <div class="top-box">
-        <h3>🌐 Création de site vitrine</h3>
-        <p>Présentez votre activité de manière professionnelle et captez des clients en ligne.</p>
-    </div>
-    </a>
-''', unsafe_allow_html=True)
-
-st.markdown('''
-    <a href="#fiches">
-    <div class="top-box">
-        <h3>📍 Fiches Google My Business</h3>
-        <p>Multipliez votre visibilité locale sur Google Maps et recevez plus d'appels.</p>
-    </div>
-    </a>
-''', unsafe_allow_html=True)
-
-st.markdown('''
-    <a href="#avis">
-    <div class="top-box">
-        <h3>⭐ Avis clients vérifiés</h3>
-        <p>Boostez votre crédibilité avec des avis rédigés à la main et livrés progressivement.</p>
-    </div>
-    </a>
-''', unsafe_allow_html=True)
-
-st.markdown('</div>', unsafe_allow_html=True)
-
-# CARD RENDERING
-st.markdown('<div class="card-grid">', unsafe_allow_html=True)
