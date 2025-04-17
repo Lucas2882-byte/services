@@ -53,6 +53,11 @@ st.markdown("""
             font-size: 16px;
             color: #4b5563;
         }
+        .top-box a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+        }
         .service-card {
             background: linear-gradient(145deg, #ffffff, #f9fafb);
             border-radius: 16px;
@@ -125,44 +130,33 @@ st.markdown('<div class="subtitle">Des solutions simples et efficaces pour être
 st.markdown('<div class="top-box-grid">', unsafe_allow_html=True)
 
 st.markdown('''
+    <a href="#site">
     <div class="top-box">
         <h3>🌐 Création de site vitrine</h3>
         <p>Présentez votre activité de manière professionnelle et captez des clients en ligne.</p>
     </div>
+    </a>
 ''', unsafe_allow_html=True)
 
 st.markdown('''
+    <a href="#fiches">
     <div class="top-box">
         <h3>📍 Fiches Google My Business</h3>
         <p>Multipliez votre visibilité locale sur Google Maps et recevez plus d'appels.</p>
     </div>
+    </a>
 ''', unsafe_allow_html=True)
 
 st.markdown('''
+    <a href="#avis">
     <div class="top-box">
         <h3>⭐ Avis clients vérifiés</h3>
         <p>Boostez votre crédibilité avec des avis rédigés à la main et livrés progressivement.</p>
     </div>
+    </a>
 ''', unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
 
 # CARD RENDERING
 st.markdown('<div class="card-grid">', unsafe_allow_html=True)
-
-def service_card(title, price, features, benefits):
-    content = f"""
-    <div class='service-card'>
-        <div class='price-box'>{price}</div>
-        <div class='section-title'>{title}</div>
-        <ul class='feature-list'>
-            {''.join([f'<li>{f}</li>' for f in features])}
-        </ul>
-        <div style='margin-top: 10px;'>
-            {''.join([f"<div class='benefit'>👉 {b}</div>" for b in benefits])}
-        </div>
-    </div>
-    """
-    st.markdown(content, unsafe_allow_html=True)
-
-# Services cards continue as before...
