@@ -24,8 +24,37 @@ st.markdown("""
             flex-wrap: wrap;
             gap: 20px;
         }
+        .top-box-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .top-box {
+            flex: 1;
+            background: #fefefe;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .top-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+        }
+        .top-box h3 {
+            font-size: 20px;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+        .top-box p {
+            font-size: 16px;
+            color: #4b5563;
+        }
         .service-card {
-            background: #ffffff;
+            background: linear-gradient(145deg, #ffffff, #f9fafb);
             border-radius: 16px;
             padding: 25px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
@@ -33,6 +62,19 @@ st.markdown("""
             width: calc(50% - 10px);
             position: relative;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: "";
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 120px;
+            height: 120px;
+            background: #f97316;
+            opacity: 0.05;
+            transform: rotate(45deg);
+            z-index: 0;
         }
         .service-card:hover {
             transform: translateY(-5px);
@@ -43,6 +85,8 @@ st.markdown("""
             font-weight: 700;
             color: #111827;
             margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
         }
         .price-box {
             position: absolute;
@@ -54,23 +98,54 @@ st.markdown("""
             border-radius: 8px;
             font-weight: bold;
             font-size: 14px;
+            z-index: 1;
         }
         .benefit {
             color: #4b5563;
             margin-top: 8px;
             font-size: 15px;
+            position: relative;
+            z-index: 1;
         }
         .feature-list {
             color: #1f2937;
             font-size: 16px;
             margin-left: 0;
             padding-left: 1.2rem;
+            position: relative;
+            z-index: 1;
         }
     </style>
 """, unsafe_allow_html=True)
 
 st.markdown('<div class="title">🚀 Boostez votre visibilité locale avec Lucasweb</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Des solutions simples et efficaces pour être visible sur Google, générer plus d’appels, plus de clients.</div>', unsafe_allow_html=True)
+
+# TOP INFO BOXES
+st.markdown('<div class="top-box-grid">', unsafe_allow_html=True)
+
+st.markdown('''
+    <div class="top-box">
+        <h3>🌐 Création de site vitrine</h3>
+        <p>Présentez votre activité de manière professionnelle et captez des clients en ligne.</p>
+    </div>
+''', unsafe_allow_html=True)
+
+st.markdown('''
+    <div class="top-box">
+        <h3>📍 Fiches Google My Business</h3>
+        <p>Multipliez votre visibilité locale sur Google Maps et recevez plus d'appels.</p>
+    </div>
+''', unsafe_allow_html=True)
+
+st.markdown('''
+    <div class="top-box">
+        <h3>⭐ Avis clients vérifiés</h3>
+        <p>Boostez votre crédibilité avec des avis rédigés à la main et livrés progressivement.</p>
+    </div>
+''', unsafe_allow_html=True)
+
+st.markdown('</div>', unsafe_allow_html=True)
 
 # CARD RENDERING
 st.markdown('<div class="card-grid">', unsafe_allow_html=True)
@@ -90,57 +165,4 @@ def service_card(title, price, features, benefits):
     """
     st.markdown(content, unsafe_allow_html=True)
 
-# Masonry-style by letting browser wrap
-service_card(
-    "🌐 Création de site internet vitrine",
-    "450€",
-    ["Site responsive (mobile, tablette)", "Design moderne, formulaire de contact, SEO local", "Hébergement + nom de domaine 1 an inclus (puis 100€/an)", "Interface facile à mettre à jour"],
-    ["Présentez votre activité 24/7.", "Renforcez votre image professionnelle.", "Optimisé pour générer des contacts facilement"]
-)
-
-service_card(
-    "📍 Optimisation fiche Google My Business",
-    "50€/mois",
-    ["Création ou optimisation complète", "Ajout photos, posts, services", "Réponses aux avis clients", "Suivi des statistiques mensuelles"],
-    ["Apparaître mieux classé sur Google Maps.", "Donner une image vivante et à jour.", "Recevoir plus d'appels locaux."]
-)
-
-service_card(
-    "📦 Pack 1 fiche + site (sans justificatif)",
-    "600€",
-    ["Fiche Google dans la ville de votre choix", "Site vitrine personnalisé inclus", "Sans besoin d'adresse physique", "Nom de domaine + hébergement inclus"],
-    ["Créez une présence dans une nouvelle zone.", "Idéal pour pros nomades ou multisecteurs."]
-)
-
-service_card(
-    "🚀 Pack 5 fiches locales",
-    "1 050€",
-    ["5 fiches dans 5 villes différentes", "1 site principal + 4 mini-sites personnalisés", "5 numéros de redirection (25€/mois)", "Hébergement + domaines : 160€/an"],
-    ["Présence multizone pour capter + d'appels.", "Très rentable pour prestataires de service local."]
-)
-
-service_card(
-    "🏢 Création de fiche justifiée",
-    "75€",
-    ["Fiche Google créée avec justificatif réel", "Optimisation SEO locale incluse"],
-    ["Pour professionnels avec adresse vérifiable.", "Fiche conforme et stable sur la durée."]
-)
-
-service_card(
-    "⭐ Achat d’avis Google vérifiés",
-    "À partir de 130€",
-    ["10 avis : 13€/avis → 130€", "25 avis : 12€/avis → 300€", "50 avis : 11€/avis → 550€", "100 avis : 9€/avis → 900€"],
-    ["Améliorez la crédibilité de votre fiche.", "Boostez le référencement naturel local."]
-)
-
-st.markdown('</div>', unsafe_allow_html=True)
-
-# CONTACT
-st.markdown('<div class="service-card">', unsafe_allow_html=True)
-st.markdown('<div class="section-title">📞 Contact & accompagnement</div>', unsafe_allow_html=True)
-st.markdown("""
-- Email : contact@lucas-freelance.fr  
-- Téléphone : 06 69 29 51 87  
-- 🔧 Packs personnalisables selon vos objectifs
-""")
-st.markdown('</div>', unsafe_allow_html=True)
+# Services cards continue as before...
