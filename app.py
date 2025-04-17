@@ -5,9 +5,11 @@ st.set_page_config(page_title="Lucasweb - Visibilité Locale", layout="wide")
 # HEADER
 st.markdown("""
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
         html, body, [class*="css"] {
             background-color: #ffffff !important;
-            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            font-family: 'Poppins', sans-serif;
             color: #111827;
         }
         .title {
@@ -28,23 +30,18 @@ st.markdown("""
             border-radius: 12px;
             padding: 30px;
             font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 40px;
+            line-height: 1.9;
+            margin-bottom: 60px;
         }
-        .pdf-link {
-            margin-top: 40px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #1d4ed8;
+        .full-text strong {
+            display: inline-block;
+            margin-top: 20px;
         }
     </style>
 """, unsafe_allow_html=True)
 
 st.markdown('<div class="title">🚀 Boostez votre visibilité locale avec Lucasweb</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Des solutions simples et efficaces pour être visible sur Google, générer plus d’appels, plus de clients.</div>', unsafe_allow_html=True)
-
-# LIEN PDF
-st.markdown('<div class="pdf-link">📄 Télécharger la présentation des services individuels : <a href="/mnt/data/Lucasweb_Services_Individuels.pdf" target="_blank">Lucasweb_Services_Individuels.pdf</a></div>', unsafe_allow_html=True)
 
 # TEXTE COMPLET
 st.markdown('''
@@ -56,7 +53,7 @@ st.markdown('''
 - Hébergement + nom de domaine inclus pendant 1 an<br>
 💻 C’est votre vitrine en ligne, accessible 24/7.<br>
 📈 Idéal pour rassurer, convaincre, et générer des contacts.<br>
-🔐 Hébergement rapide, sécurisé, sans pub ni distraction.<br><br>
+🔐 Hébergement rapide, sécurisé, sans pub ni distraction.<br>
 
 📍 <strong>Gestion complète d’une fiche Google My Business – 50€/mois</strong><br>
 - Optimisation fiche existante ou création complète<br>
@@ -64,21 +61,21 @@ st.markdown('''
 - Réponses aux avis, publications hebdo, suivi des performances<br>
 - Rapport mensuel clair : vues, clics, appels, directions<br>
 🚀 Une fiche active = plus de visibilité.<br>
-📞 Vous remontez dans les résultats et recevez plus d'appels.<br><br>
+📞 Vous remontez dans les résultats et recevez plus d'appels.<br>
 
 🏢 <strong>Création de fiche avec justificatif d'adresse – 75€</strong><br>
 - Fiche créée dans une ville de votre choix avec adresse réelle vérifiée<br>
 - Optimisation de base incluse (photos, description, horaires)<br>
 - Convient aux activités locales ou aux franchises<br>
 🔐 Fiche 100% conforme et pérenne dans le temps.<br>
-🏙️ Apparaît dans les résultats Google Maps de la zone choisie.<br><br>
+🏙️ Apparaît dans les résultats Google Maps de la zone choisie.<br>
 
 📦 <strong>Création de fiche sans justificatif – 250€</strong><br>
 - Fiche créée sans local physique<br>
 - Possibilité de choisir une ville stratégique<br>
 - Avec mini-site vitrine inclus (optimisation SEO local)<br>
 📍 Idéal pour se positionner dans une nouvelle ville sans y être.<br>
-💼 Solution rapide et efficace pour les indépendants ou services à distance.<br><br>
+💼 Solution rapide et efficace pour les indépendants ou services à distance.<br>
 
 ⭐ <strong>Achat d’avis Google vérifiés</strong><br>
 - 10 avis : 13€/avis → 130€<br>
