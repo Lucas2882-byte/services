@@ -13,24 +13,29 @@ st.markdown("""
         .subtitle {
             font-size: 22px;
             font-weight: 400;
-            color: #333;
+            color: #ccc;
             margin-bottom: 40px;
         }
+        .section-box {
+            background-color: #1F2937;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
         .section-title {
-            font-size: 28px;
-            font-weight: 600;
-            margin-top: 40px;
-            color: #111827;
+            font-size: 24px;
+            font-weight: 700;
+            color: #FBBF24;
+            margin-bottom: 10px;
         }
         .price {
             font-weight: bold;
-            color: #059669;
+            font-size: 18px;
+            color: #10B981;
         }
-        .service-box {
-            background-color: #F9FAFB;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
+        .benefit {
+            color: #9CA3AF;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -38,64 +43,88 @@ st.markdown("""
 st.markdown('<div class="title">🚀 Boostez votre visibilité locale avec Lucasweb</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Des solutions simples et efficaces pour être visible sur Google, générer plus d’appels, plus de clients.</div>', unsafe_allow_html=True)
 
-# SERVICES
-with st.container():
-    st.markdown('<div class="section-title">🌐 Création de site internet vitrine - <span class="price">450€</span></div>', unsafe_allow_html=True)
-    st.markdown("""
-    - Site responsive (mobile, tablette)
-    - Design moderne, formulaire de contact, SEO local
-    - Hébergement + nom de domaine 1 an inclus (puis 100€/an)
-    - ✅ Idéal pour présenter son activité et convertir ses visiteurs
-    """)
+# SERVICES AS BOXES
+def service_box(title, price, features, benefits):
+    st.markdown('<div class="section-box">', unsafe_allow_html=True)
+    st.markdown(f'<div class="section-title">{title} <span class="price">{price}</span></div>', unsafe_allow_html=True)
+    for feature in features:
+        st.markdown(f"- {feature}")
+    if benefits:
+        st.markdown('<br>', unsafe_allow_html=True)
+        for b in benefits:
+            st.markdown(f'<span class="benefit">👉 {b}</span>', unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
 
-with st.container():
-    st.markdown('<div class="section-title">📍 Optimisation fiche Google My Business - <span class="price">50€/mois</span></div>', unsafe_allow_html=True)
-    st.markdown("""
-    - Création ou optimisation complète (infos, photos, posts, etc.)
-    - Suivi mensuel, réponses aux avis, analyse de performance
-    - ✅ Gagnez en visibilité locale sur Google Maps
-    """)
+service_box(
+    "🌐 Création de site internet vitrine",
+    "450€",
+    [
+        "Site responsive (mobile, tablette)",
+        "Design moderne, formulaire de contact, SEO local",
+        "Hébergement + nom de domaine 1 an inclus (puis 100€/an)"
+    ],
+    ["Présentez votre activité 24/7 et renforcez votre image pro.", "Convertissez les visiteurs en clients."]
+)
 
-with st.container():
-    st.markdown('<div class="section-title">📦 Pack 1 fiche + site (sans justificatif) - <span class="price">600€</span></div>', unsafe_allow_html=True)
-    st.markdown("""
-    - 1 fiche Google dans la ville de votre choix (pas de local requis)
-    - 1 site vitrine avec nom de domaine + hébergement inclus
-    - ✅ Ciblez une zone stratégique sans vous déplacer
-    """)
+service_box(
+    "📍 Optimisation fiche Google My Business",
+    "50€/mois",
+    [
+        "Création ou optimisation complète (infos, photos, posts, etc.)",
+        "Suivi mensuel, réponses aux avis, analyse de performance"
+    ],
+    ["Améliorez votre classement sur Google Maps.", "Recevez plus d'appels entrants depuis votre zone locale."]
+)
 
-with st.container():
-    st.markdown('<div class="section-title">🚀 Pack 5 fiches locales - <span class="price">1 050€</span></div>', unsafe_allow_html=True)
-    st.markdown("""
-    - 5 fiches locales (210€/fiche)
-    - 1 site principal (400€) + 4 mini-sites personnalisés (100€ chacun) → 800€
-    - 5 numéros de redirection → 25€/mois
-    - Hébergement + 5 noms de domaine → 160€/an
-    - ✅ Dominez Google Maps sur plusieurs zones
-    """)
+service_box(
+    "📦 Pack 1 fiche + site (sans justificatif)",
+    "600€",
+    [
+        "1 fiche Google dans la ville de votre choix (sans adresse physique)",
+        "1 site vitrine avec nom de domaine + hébergement inclus"
+    ],
+    ["Créez une présence locale sans local physique.", "Idéal pour les pros nomades ou multisecteurs."]
+)
 
-with st.container():
-    st.markdown('<div class="section-title">🏢 Création de fiche justifiée - <span class="price">75€</span></div>', unsafe_allow_html=True)
-    st.markdown("""
-    - Fiche locale vérifiée avec justificatif d'adresse
-    - ✅ Présence Google 100% conforme et crédible
-    """)
+service_box(
+    "🚀 Pack 5 fiches locales",
+    "1 050€",
+    [
+        "5 fiches Google (210€/fiche)",
+        "1 site principal (400€) + 4 mini-sites (100€ chacun)",
+        "Numéros de redirection : 25€/mois",
+        "Hébergement + 5 noms de domaine : 160€/an"
+    ],
+    ["Multipliez les points de présence sur Google Maps.", "Couvrez plusieurs villes sans ouvrir de locaux physiques."]
+)
 
-with st.container():
-    st.markdown('<div class="section-title">⭐ Avis Google vérifiés</div>', unsafe_allow_html=True)
-    st.markdown("""
-    - 10 avis : 13€/avis → 130€
-    - 25 avis : 12€/avis → 300€
-    - 50 avis : 11€/avis → 550€
-    - 100 avis : 9€/avis → 900€
-    - ✅ Boostez votre réputation et votre classement
-    """)
+service_box(
+    "🏢 Création de fiche justifiée",
+    "75€",
+    [
+        "Fiche Google avec justificatif d'adresse réel inclus"
+    ],
+    ["Obtenez une fiche 100% conforme pour votre entreprise locale."]
+)
+
+service_box(
+    "⭐ Achat d’avis Google vérifiés",
+    "À partir de 130€",
+    [
+        "10 avis : 13€/avis → 130€",
+        "25 avis : 12€/avis → 300€",
+        "50 avis : 11€/avis → 550€",
+        "100 avis : 9€/avis → 900€"
+    ],
+    ["Améliorez votre e-réputation localement.", "Renforcez votre visibilité grâce à la preuve sociale."]
+)
 
 # CONTACT
-with st.container():
-    st.markdown('<div class="section-title">📞 Contact & accompagnement</div>', unsafe_allow_html=True)
-    st.markdown("""
-    - Email : contact@lucas-freelance.fr
-    - Téléphone : 06 69 29 51 87
-    - 🔧 Packs personnalisables sur demande
-    """)
+st.markdown('<div class="section-box">', unsafe_allow_html=True)
+st.markdown('<div class="section-title">📞 Contact & accompagnement</div>', unsafe_allow_html=True)
+st.markdown("""
+- Email : contact@lucas-freelance.fr  
+- Téléphone : 06 69 29 51 87  
+- 🔧 Packs personnalisables selon vos objectifs
+""")
+st.markdown('</div>', unsafe_allow_html=True)
