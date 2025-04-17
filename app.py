@@ -5,13 +5,16 @@ st.set_page_config(page_title="Lucasweb - Visibilité Locale", layout="wide")
 # HEADER
 st.markdown("""
     <style>
-        body {
-            background-color: #ffffff;
+        html, body, [class*="css"] {
+            background-color: #ffffff !important;
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            color: #111827;
         }
         .title {
             font-size: 48px;
             font-weight: 700;
             color: #f97316;
+            margin-bottom: 10px;
         }
         .subtitle {
             font-size: 22px;
@@ -32,11 +35,11 @@ st.markdown("""
         }
         .top-box {
             flex: 1;
-            background: #fefefe;
+            background: #ffffff;
             border: 1px solid #e5e7eb;
             border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
             text-align: center;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
@@ -48,10 +51,12 @@ st.markdown("""
             font-size: 20px;
             color: #111827;
             margin-bottom: 10px;
+            text-decoration: none;
         }
         .top-box p {
             font-size: 16px;
             color: #4b5563;
+            margin: 0;
         }
         .top-box a {
             color: inherit;
@@ -59,7 +64,7 @@ st.markdown("""
             display: block;
         }
         .service-card {
-            background: linear-gradient(145deg, #ffffff, #f9fafb);
+            background: #ffffff;
             border-radius: 16px;
             padding: 25px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
@@ -68,18 +73,6 @@ st.markdown("""
             position: relative;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             overflow: hidden;
-        }
-        .service-card::before {
-            content: "";
-            position: absolute;
-            top: -40px;
-            right: -40px;
-            width: 120px;
-            height: 120px;
-            background: #f97316;
-            opacity: 0.05;
-            transform: rotate(45deg);
-            z-index: 0;
         }
         .service-card:hover {
             transform: translateY(-5px);
