@@ -6,7 +6,7 @@ st.set_page_config(page_title="Lucasweb - Visibilité Locale", layout="wide")
 st.markdown("""
     <style>
         body {
-            background-color: #0f172a;
+            background-color: #ffffff;
         }
         .title {
             font-size: 48px;
@@ -16,39 +16,46 @@ st.markdown("""
         .subtitle {
             font-size: 22px;
             font-weight: 400;
-            color: #e5e7eb;
+            color: #374151;
             margin-bottom: 40px;
         }
         .service-card {
-            background: linear-gradient(135deg, #1e293b, #0f172a);
+            background: #f9fafb;
             border-radius: 16px;
             padding: 25px;
             margin-bottom: 25px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-            border: 1px solid #334155;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
             height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: relative;
         }
         .section-title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
-            color: #facc15;
+            color: #111827;
             margin-bottom: 12px;
         }
-        .price {
+        .price-box {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #f97316;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 8px;
             font-weight: bold;
-            font-size: 18px;
-            color: #22c55e;
+            font-size: 14px;
         }
         .benefit {
-            color: #94a3b8;
+            color: #4b5563;
             margin-top: 8px;
             font-size: 15px;
         }
         .feature-list {
-            color: #f1f5f9;
+            color: #1f2937;
             font-size: 16px;
             margin-left: 0;
             padding-left: 1.2rem;
@@ -65,7 +72,8 @@ def service_card(title, price, features, benefits, container):
     with container:
         content = f"""
         <div class='service-card'>
-            <div class='section-title'>{title} <span class='price'>{price}</span></div>
+            <div class='price-box'>{price}</div>
+            <div class='section-title'>{title}</div>
             <ul class='feature-list'>
                 {''.join([f'<li>{f}</li>' for f in features])}
             </ul>
